@@ -1,0 +1,56 @@
+{
+  "info": {
+    "name": "Cafetería UTLA",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. GET /api/estado/ -> 200",
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": ["pm.test('Codigo 200', function () { pm.response.to.have.status(200); });"]}}],
+      "request": {"method": "GET", "header": [], "url": {"raw": "http://127.0.0.1:8000/api/estado/", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "estado"]}},
+      "response": []
+    },
+    {
+      "name": "2. POST /api/estado/ -> 405",
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": ["pm.test('Codigo 405', function () { pm.response.to.have.status(405); });"]}}],
+      "request": {"method": "POST", "header": [], "url": {"raw": "http://127.0.0.1:8000/api/estado/", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "estado"]}},
+      "response": []
+    },
+    {
+      "name": "3. GET /api/platos/ -> 200",
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": ["pm.test('Codigo 200', function () { pm.response.to.have.status(200); });"]}}],
+      "request": {"method": "GET", "header": [], "url": {"raw": "http://127.0.0.1:8000/api/platos/", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "platos"]}},
+      "response": []
+    },
+    {
+      "name": "4. GET /api/platos/2/ -> 200",
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": ["pm.test('Codigo 200', function () { pm.response.to.have.status(200); });"]}}],
+      "request": {"method": "GET", "header": [], "url": {"raw": "http://127.0.0.1:8000/api/platos/2/", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "platos", "2"]}},
+      "response": []
+    },
+    {
+      "name": "5. GET /api/platos/99/ -> 404",
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": ["pm.test('Codigo 404', function () { pm.response.to.have.status(404); });"]}}],
+      "request": {"method": "GET", "header": [], "url": {"raw": "http://127.0.0.1:8000/api/platos/99/", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "platos", "99"]}},
+      "response": []
+    },
+    {
+      "name": "6. POST /api/platos/ -> 201",
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": ["pm.test('Codigo 201', function () { pm.response.to.have.status(201); });"]}}],
+      "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\"nombre\": \"Horchata\", \"precio\": 0.75}", "options": {"raw": {"language": "json"}}}, "url": {"raw": "http://127.0.0.1:8000/api/platos/", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "platos"]}},
+      "response": []
+    },
+    {
+      "name": "7. POST /api/platos/ -> 400",
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": ["pm.test('Codigo 400', function () { pm.response.to.have.status(400); });"]}}],
+      "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\"precio\": 0.75}", "options": {"raw": {"language": "json"}}}, "url": {"raw": "http://127.0.0.1:8000/api/platos/", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "platos"]}},
+      "response": []
+    },
+    {
+      "name": "8. POST /api/platos/ -> 400",
+      "event": [{"listen": "test", "script": {"type": "text/javascript", "exec": ["pm.test('Codigo 400', function () { pm.response.to.have.status(400); });"]}}],
+      "request": {"method": "POST", "header": [{"key": "Content-Type", "value": "application/json"}], "body": {"mode": "raw", "raw": "{\"nombre\": \"Horchata\"}", "options": {"raw": {"language": "json"}}}, "url": {"raw": "http://127.0.0.1:8000/api/platos/", "protocol": "http", "host": ["127", "0", "0", "1"], "port": "8000", "path": ["api", "platos"]}},
+      "response": []
+    }
+  ]
+}
